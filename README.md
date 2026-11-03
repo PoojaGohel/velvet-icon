@@ -1,5 +1,7 @@
 # velvet-icon
 
+**[Browse all icons and try the live playground →](https://poojagohel.github.io/velvet-icon/)**
+
 A framework-agnostic, **zero runtime dependency** SVG icon library for TypeScript and JavaScript. Icons are exposed as ready-to-use SVG strings that you can size, recolor, and re-stroke on the fly.
 
 - Zero runtime dependencies — `typescript` is the only devDependency

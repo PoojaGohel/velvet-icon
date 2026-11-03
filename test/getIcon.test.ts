@@ -56,10 +56,49 @@ test("every registered icon renders well-formed, non-empty SVG markup", () => {
 test("no two icons share identical inner markup, aside from known aliases", () => {
   // Some icons are intentionally kept under two names (e.g. a library rename).
   // Anything NOT in this allowlist that collides is almost certainly a broken placeholder.
-  const KNOWN_ALIASES = new Set([
-    ["alertCircle", "circleAlert"].sort().join("|"),
-    ["grid", "layoutGrid"].sort().join("|"),
-  ]);
+  // Same artwork published under two names by the merged source icon sets.
+  const KNOWN_ALIASES = new Set(
+    [
+    ["accessibility2", "accessible"],
+    ["adjustments", "equalizer2"],
+    ["adjustmentsHorizontal", "equalizer"],
+    ["alertCircle", "circleAlert"],
+    ["arrowDownWideNarrow", "sortAsc"],
+    ["arrowLeftEndOnRectangle", "arrowLeftOnRectangle"],
+    ["arrowRightOnRectangle", "arrowRightStartOnRectangle"],
+    ["banknote3", "cashBanknote"],
+    ["barbell", "dumbbell2"],
+    ["basket", "shoppingBasket"],
+    ["blocks", "blocks2"],
+    ["brandGo", "brandGolang"],
+    ["brandPaypal", "brandPaypal2"],
+    ["brandYoutube", "brandYoutube2"],
+    ["bread", "breadSlice"],
+    ["buildingHospital", "hospital2"],
+    ["buildingLighthouse", "tower"],
+    ["chartPie", "chartPie2"],
+    ["circleUserRound", "userCircle"],
+    ["clockStop", "stopwatch"],
+    ["cocktail", "glassCocktail"],
+    ["codeXml", "codeXml2"],
+    ["crown2", "crown4"],
+    ["cup", "cupStraw"],
+    ["desktop", "deviceDesktop"],
+    ["ellipsis", "moreHorizontal"],
+    ["gitPullRequestCreate", "gitPullRequestCreateArrow"],
+    ["grid", "layoutGrid"],
+    ["history3", "historyToggle"],
+    ["laugh", "moodHappy"],
+    ["listCheck", "listChecks"],
+    ["lockOpen", "unlock"],
+    ["meh", "moodEmpty"],
+    ["moodSmile", "smile"],
+    ["shield2Game", "shieldCheckered"],
+    ["shipping", "truckLoading"],
+    ["store", "store3"],
+    ["vectorBezier", "vectorBezier2"],
+    ].map((pair) => pair.sort().join("|")),
+  );
 
   const names = Object.keys(icons) as IconName[];
   const seen = new Map<string, string>();

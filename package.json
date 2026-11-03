@@ -2,6 +2,7 @@
   "name": "velvet-icon",
   "version": "1.0.0",
   "description": "Framework-agnostic, zero-dependency SVG icon library with a typed API for size, color, and stroke-width customization.",
+  "homepage": "https://poojagohel.github.io/velvet-icon/",
   "type": "module",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -53,5 +54,8 @@
   },
   "devDependencies": {
     "typescript": "^5.9.3"
+  },
+  "bugs": {
+    "url": "https://github.com/PoojaGohel/velvet-icon/issues"
   }
 }
