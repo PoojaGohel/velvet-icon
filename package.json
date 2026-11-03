@@ -1,0 +1,57 @@
+{
+  "name": "velvet-icon",
+  "version": "1.0.0",
+  "description": "Framework-agnostic, zero-dependency SVG icon library with a typed API for size, color, and stroke-width customization.",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "icon-library",
+    "typescript",
+    "zero-dependency",
+    "no-dependencies",
+    "framework-agnostic",
+    "react-icons",
+    "velvet-icon"
+  ],
+  "author": {
+    "name": "Pooja Gohel",
+    "url": "https://github.com/PoojaGohel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PoojaGohel/velvet-icon.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build:icons": "node --experimental-strip-types src/scripts/build-icons.ts",
+    "build:esm": "tsc -p tsconfig.build.json --module esnext --moduleResolution bundler --outDir dist/esm",
+    "build:cjs": "tsc -p tsconfig.build.json --module commonjs --moduleResolution node10 --outDir dist/cjs --verbatimModuleSyntax false",
+    "postbuild:cjs": "node scripts/write-cjs-package-json.cjs",
+    "build:types": "tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --outDir dist/types",
+    "build": "npm run build:icons && npm run build:esm && npm run build:cjs && npm run build:types",
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
